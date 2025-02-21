@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "548383594880",
+    "project_id": "pgcp-df638",
+    "storage_bucket": "pgcp-df638.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548383594880:android:bd2958d919991be16d0965",
+        "android_client_info": {
+          "package_name": "com.example.pgcnexus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAae9aH1m_B9131CUQxGSPz6i7yAxCpSJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
