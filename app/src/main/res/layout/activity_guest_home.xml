@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Punjab Group Of Colleges"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="end"
+            android:src="@drawable/logo" />
+    </LinearLayout>
+    <!-- Header/Menu Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_700"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HOME"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:onClick="onMenuClick"/>
+
+        <TextView
+            android:id="@+id/faculties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FACULTIES"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:onClick="onMenuClick"/>
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ABOUT"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:onClick="onMenuClick"/>
+
+        <TextView
+            android:id="@+id/contact_us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONTACT US"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:onClick="onMenuClick"/>
+    </LinearLayout>
+    <!-- Grid Layout for Courses -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+
+        <!-- BsIT -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border_box"
+            android:padding="8dp"
+            android:layout_margin="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bsit" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BsIT"
+                android:backgroundTint="@color/purple_700"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- BsCS -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border_box"
+            android:padding="8dp"
+            android:layout_margin="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bscs" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BsCS"
+                android:backgroundTint="@color/purple_700"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- Bs English -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border_box"
+            android:padding="8dp"
+            android:layout_margin="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bs_english" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bs English"
+                android:backgroundTint="@color/purple_700"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- Bs Chemistry -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border_box"
+            android:padding="8dp"
+            android:layout_margin="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bs_chemistry" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bs Chemistry"
+                android:backgroundTint="@color/purple_700"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </GridLayout>
+
+</LinearLayout>

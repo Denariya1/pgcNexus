@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Punjab Group Of Colleges"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="end"
+            android:src="@drawable/logo" />
+    </LinearLayout>
+    <!-- Header/Menu Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_700"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HOME"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:onClick="onMenuClick"/>
+
+        <TextView
+            android:id="@+id/faculties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FACULTIES"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:onClick="onMenuClick"/>
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ABOUT"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:onClick="onMenuClick"/>
+
+        <TextView
+            android:id="@+id/contact_us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONTACT US"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:onClick="onMenuClick"/>
+    </LinearLayout>
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_700"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONTACT US"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- Contact Form Box -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="8dp"
+        android:orientation="vertical"
+        android:backgroundTint="@android:color/white"
+        android:elevation="2dp"
+        android:background="@drawable/border_box">
+
+        <!-- Contact Us Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Us"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_700"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Name Input -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/input_field"
+            android:padding="10dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_person"
+                android:tint="@color/purple_700"
+                android:layout_marginRight="8dp"/>
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:textColorHint="@color/black"
+                android:textColor="@android:color/black"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+
+        <!-- Email Input -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/input_field"
+            android:padding="10dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_email"
+                android:tint="@color/purple_700"
+                android:layout_marginRight="8dp"/>
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:textColorHint="@color/black"
+                android:textColor="@android:color/black"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+
+        <!-- Message Input -->
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Message"
+            android:textColorHint="@color/black"
+            android:textColor="@android:color/black"
+            android:background="@drawable/input_field"
+            android:padding="10dp"
+            android:gravity="top"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Send Message Button -->
+        <Button
+            android:id="@+id/btn_send_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Message"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/purple_700"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+</LinearLayout>

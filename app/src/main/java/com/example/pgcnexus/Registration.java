@@ -9,6 +9,7 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,6 +45,15 @@ public class Registration extends AppCompatActivity {
                 ds.setUnderlineText(false); // Remove underline
             }
         };
+
+        Button guestButton = findViewById(R.id.btn_guest);
+        guestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Registration.this, GuestHomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Apply the ClickableSpan to the "Sign In" part of the text
         int startIndex = fullText.indexOf("Sign In");
