@@ -26,6 +26,8 @@ public class AboutActivity extends AppCompatActivity {
             intent = new Intent(this, AboutActivity.class);
         } else if (id == R.id.contact_us) {
             intent = new Intent(this, ContactActivity.class);
+        } else if (id == R.id.sign_in) {
+            intent = new Intent(this, SignIn.class); // Navigate to SignIn activity
         }
 
         if (intent != null) {

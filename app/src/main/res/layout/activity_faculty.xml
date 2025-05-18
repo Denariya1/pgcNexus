@@ -21,19 +21,19 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:padding="10dp"
-            android:textColor="@color/black"/>
+            android:textColor="#301E8A"/>
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="160dp"
+            android:layout_height="90dp"
             android:layout_gravity="end"
-            android:src="@drawable/logo" />
+            android:src="@drawable/pgclogo" />
     </LinearLayout>
     <!-- Header/Menu Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_700"
+        android:background="#301E8A"
         android:padding="10dp"
         android:orientation="horizontal"
         android:gravity="center">
@@ -77,6 +77,15 @@
             android:textStyle="bold"
             android:padding="8dp"
             android:onClick="onMenuClick"/>
+        <TextView
+            android:id="@+id/sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIGN IN"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:onClick="onMenuClick"/>
     </LinearLayout>
 
     <!-- Scrollable Faculty List -->
@@ -106,14 +115,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/bsit"/>
+                    android:src="@drawable/itpic"/>
 
                 <Button
+                    android:id="@+id/btn_it"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/purple_700"
-                    android:text="BsIT"
-                    android:textColor="@android:color/white"/>
+                    android:backgroundTint="#301E8A"
+                    android:text="BS-IT"
+                    android:textColor="@android:color/white"
+                    android:onClick="onFacultyClick"/>
+
             </LinearLayout>
 
             <!-- Faculty of CS -->
@@ -130,38 +142,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/bscs"/>
+                    android:src="@drawable/cs"/>
 
                 <Button
+                    android:id="@+id/btn_cs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/purple_700"
-                    android:text="BScs"
-                    android:textColor="@android:color/white"/>
-            </LinearLayout>
+                    android:backgroundTint="#301E8A"
+                    android:text="BS-CS"
+                    android:textColor="@android:color/white"
+                    android:onClick="onFacultyClick"/>
 
-            <!-- Faculty of English -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="10dp"
-                android:background="@color/white"
-                android:elevation="4dp"
-                android:padding="5dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/bs_english"/>
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/purple_700"
-                    android:text="Bs English"
-                    android:textColor="@android:color/white"/>
             </LinearLayout>
 
             <!-- Faculty of Chemistry -->
@@ -178,14 +169,43 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/bs_chemistry"/>
+                    android:src="@drawable/chem"/>
 
                 <Button
+                    android:id="@+id/btn_chem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/purple_700"
-                    android:text="Bs Chemistry"
-                    android:textColor="@android:color/white"/>
+                    android:backgroundTint="#301E8A"
+                    android:text="BS-Chemistry"
+                    android:textColor="@android:color/white"
+                    android:onClick="onFacultyClick"/>
+
+            </LinearLayout>
+
+            <!-- Faculty of BBA -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:elevation="4dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bba"/>
+                <Button
+                    android:id="@+id/btn_bba"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#301E8A"
+                    android:text="BBA"
+                    android:textColor="@android:color/white"
+                    android:onClick="onFacultyClick"/>
+
             </LinearLayout>
 
         </LinearLayout>

@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cs" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BS Computer Science"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingTop="12dp"
+            android:gravity="center"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="F.Sc or ICS minimum 70% Marks"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:paddingBottom="16dp"/>
+
+        <!-- Tabs (mocked for static layout) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E0E0E0">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fee Structure"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="#301E8A"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- FEE DETAILS (all already aligned properly) -->
+        <!-- Duration -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Duration:"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 Years"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <!-- Total Semester -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total Semester:"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <!-- Total Package -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total Package:"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="669,000 PKR"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <!-- At Admission Time -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="At Admission Time:"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28,500 PKR"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <!-- Additional Charges -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Additional Charges at Admission:"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2,700 PKR"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <!-- Examination Fee -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Examination Fee:"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3,500 PKR"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <!-- Total Amount at Admission -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total Amount (At Admission):"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="31,200 PKR"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <!-- Installment -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Installment:"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40,250 × 16"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E0E0E0">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Road Map"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="#301E8A"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+        <!-- Header/Menu Button -->
+        <LinearLayout
+            android:id="@+id/semester_header1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E3F2FD"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Semester No. 1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#301E8A" />
+
+            <ImageView
+                android:id="@+id/toggle_icon1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/arrow_down_float" />
+        </LinearLayout>
+
+        <!-- Expandable Content -->
+        <LinearLayout
+            android:id="@+id/course_list_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="8dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow>
+                    <TextView android:text="Course Code" android:textStyle="bold"/>
+                    <TextView android:text="Course Name" android:textStyle="bold"/>
+                    <TextView android:text="Credit Hours" android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT101" />
+                    <TextView android:text="Intro to IT" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="MATH101" />
+                    <TextView android:text="Mathematics for IT" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="ENGL101" />
+                    <TextView android:text="English Composition" />
+                    <TextView android:text="2 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="CS102" />
+                    <TextView android:text="Programming Fundamentals" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="PHY101" />
+                    <TextView android:text="Physics I" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="PSY101" />
+                    <TextView android:text="Introduction to Psychology" />
+                    <TextView android:text="2 + 0" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Credit Hours: 16"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/semester_header2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E3F2FD"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Semester No. 2"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#301E8A" />
+
+            <ImageView
+                android:id="@+id/toggle_icon2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/arrow_down_float" />
+        </LinearLayout>
+
+        <!-- Expandable Content -->
+        <LinearLayout
+            android:id="@+id/course_list_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="8dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow>
+                    <TextView android:text="Course Code" android:textStyle="bold"/>
+                    <TextView android:text="Course Name" android:textStyle="bold"/>
+                    <TextView android:text="Credit Hours" android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT102" />
+                    <TextView android:text="Computer Architecture" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="MATH102" />
+                    <TextView android:text="Discrete Mathematics" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="CS104" />
+                    <TextView android:text="Data Structures" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="ENGL102" />
+                    <TextView android:text="Communication Skills" />
+                    <TextView android:text="2 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="PHY102" />
+                    <TextView android:text="Physics II" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT103" />
+                    <TextView android:text="IT Lab Practices" />
+                    <TextView android:text="1 + 0" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Credit Hours: 15"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/semester_header3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E3F2FD"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Semester No. 3"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#301E8A" />
+
+            <ImageView
+                android:id="@+id/toggle_icon3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/arrow_down_float" />
+        </LinearLayout>
+
+        <!-- Expandable Content -->
+        <LinearLayout
+            android:id="@+id/course_list_layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="8dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow>
+                    <TextView android:text="Course Code" android:textStyle="bold"/>
+                    <TextView android:text="Course Name" android:textStyle="bold"/>
+                    <TextView android:text="Credit Hours" android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT201" />
+                    <TextView android:text="Database Systems" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="CS201" />
+                    <TextView android:text="OOP" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="MATH201" />
+                    <TextView android:text="Statistics" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="ECON101" />
+                    <TextView android:text="Microeconomics" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT202" />
+                    <TextView android:text="Web Development" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Credit Hours: 15"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/semester_header4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E3F2FD"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Semester No. 4"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#301E8A" />
+
+            <ImageView
+                android:id="@+id/toggle_icon4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/arrow_down_float" />
+        </LinearLayout>
+
+        <!-- Expandable Content -->
+        <LinearLayout
+            android:id="@+id/course_list_layout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="8dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow>
+                    <TextView android:text="Course Code" android:textStyle="bold"/>
+                    <TextView android:text="Course Name" android:textStyle="bold"/>
+                    <TextView android:text="Credit Hours" android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT203" />
+                    <TextView android:text="Operating Systems" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="CS202" />
+                    <TextView android:text="Algorithms" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="MATH202" />
+                    <TextView android:text="Linear Algebra" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT204" />
+                    <TextView android:text="Software Engineering" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="GEN201" />
+                    <TextView android:text="Sociology" />
+                    <TextView android:text="2 + 0" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Credit Hours: 14"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/semester_header5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E3F2FD"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Semester No. 5"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#301E8A" />
+
+            <ImageView
+                android:id="@+id/toggle_icon5"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/arrow_down_float" />
+        </LinearLayout>
+
+        <!-- Expandable Content -->
+        <LinearLayout
+            android:id="@+id/course_list_layout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="8dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*" >
+
+                <TableRow>
+                    <TextView android:text="Course Code" android:textStyle="bold"/>
+                    <TextView android:text="Course Name" android:textStyle="bold"/>
+                    <TextView android:text="Credit Hours" android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT301" />
+                    <TextView android:text="Data Comm and Networks" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="CS301" />
+                    <TextView android:text="Software Development" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT302" />
+                    <TextView android:text="Mobile App Development" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT303" />
+                    <TextView android:text="IT Project Management" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="MATH301" />
+                    <TextView android:text="Numerical Methods" />
+                    <TextView android:text="2 + 0" />
+                </TableRow>
+            </TableLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Credit Hours: 15"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/semester_header6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E3F2FD"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Semester No. 6"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#301E8A" />
+
+            <ImageView
+                android:id="@+id/toggle_icon6"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/arrow_down_float" />
+        </LinearLayout>
+
+        <!-- Expandable Content -->
+        <LinearLayout
+            android:id="@+id/course_list_layout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="8dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow>
+                    <TextView android:text="Course Code" android:textStyle="bold"/>
+                    <TextView android:text="Course Name" android:textStyle="bold"/>
+                    <TextView android:text="Credit Hours" android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT304" />
+                    <TextView android:text="Cloud Computing" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT305" />
+                    <TextView android:text="Cybersecurity" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT306" />
+                    <TextView android:text="Artificial Intelligence" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="CS302" />
+                    <TextView android:text="Advanced Database Systems" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+                <TableRow>
+                    <TextView android:text="GEN301" />
+                    <TextView android:text="Ethics in IT" />
+                    <TextView android:text="2 + 0" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Credit Hours: 14"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/semester_header7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E3F2FD"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Semester No. 7"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#301E8A" />
+
+            <ImageView
+                android:id="@+id/toggle_icon7"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/arrow_down_float" />
+        </LinearLayout>
+
+        <!-- Expandable Content -->
+        <LinearLayout
+            android:id="@+id/course_list_layout7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="8dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*" >
+
+                <TableRow>
+                    <TextView android:text="Course Code" android:textStyle="bold"/>
+                    <TextView android:text="Course Name" android:textStyle="bold"/>
+                    <TextView android:text="Credit Hours" android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT401" />
+                    <TextView android:text="IT Management" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="CS401" />
+                    <TextView android:text="Advanced Web Dev" />
+                    <TextView android:text="2 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT402" />
+                    <TextView android:text="IT Research Methods" />
+                    <TextView android:text="2 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT403" />
+                    <TextView android:text="Distributed Systems" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT404" />
+                    <TextView android:text="Internship / Project" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+            </TableLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Credit Hours: 14"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/semester_header8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E3F2FD"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Semester No. 8"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#301E8A" />
+
+            <ImageView
+                android:id="@+id/toggle_icon8"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/arrow_down_float" />
+        </LinearLayout>
+
+        <!-- Expandable Content -->
+        <LinearLayout
+            android:id="@+id/course_list_layout8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="8dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*" >
+
+                <TableRow>
+                    <TextView android:text="Course Code" android:textStyle="bold"/>
+                    <TextView android:text="Course Name" android:textStyle="bold"/>
+                    <TextView android:text="Credit Hours" android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT405" />
+                    <TextView android:text="Capstone Project" />
+                    <TextView android:text="3 + 1" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="IT406" />
+                    <TextView android:text="IT Policy and Governance" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="CS402" />
+                    <TextView android:text="Emerging Technologies" />
+                    <TextView android:text="3 + 0" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="GEN302" />
+                    <TextView android:text="Leadership and Management" />
+                    <TextView android:text="2 + 0" />
+                </TableRow>
+            </TableLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Credit Hours: 12"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E0E0E0">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Deadlines for Fall Semester"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="#301E8A"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Admission forms Submission"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5th September 2025"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="end" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Display of Merit List"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20th Sep 2025"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="end" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fee Submission"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25th Sep 2025"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="end" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:background="#F5F5F5"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/applyNowContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="12dp"
+                android:background="@drawable/apply_now_button"
+                android:elevation="6dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_rocket"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/applyNowText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="APPLY NOW!"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

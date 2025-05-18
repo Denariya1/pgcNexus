@@ -13,6 +13,69 @@
         android:theme="@style/Theme.PGCNexus"
         tools:targetApi="31">
         <activity
+            android:name=".StuSuggestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LogActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisteredCoursesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StuAnnouncementsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StuTimetableActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StuLeavestatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StuFeechallanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Student1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".EmailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MarksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScheduleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CourseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BbaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BsChemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BsCsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BsItActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BoxActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ContactActivity"
             android:exported="false" />
         <activity
@@ -25,10 +88,7 @@
             android:name=".GuestHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".signupScreen"
-            android:exported="false" />
-        <activity
-            android:name=".Registration"
+            android:name=".SignIn"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

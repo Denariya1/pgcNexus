@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#301E8A">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Profile Image Circle -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/circle_background"
+                android:contentDescription="Student Image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/circularprofile" />
+        </RelativeLayout>
+
+        <!-- Student Name and ID -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvStudentName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Denariya Maryam"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvStudentId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="bsf2109065"
+                android:textSize="16sp"
+                android:textColor="#666666"
+                android:gravity="center"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Student Profile and Academic History Tabs -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#EEEEEE"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tabProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Student Profile"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="12dp"
+                android:background="?attr/selectableItemBackground"/>
+
+            <TextView
+                android:id="@+id/tabAcademic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Academic History"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="12dp"
+                android:background="?attr/selectableItemBackground"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"/>
+
+        <!-- Personal Information Section (Student Profile) with Blue Border -->
+        <LinearLayout
+            android:id="@+id/layoutProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/blue_border"
+            android:padding="16dp"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Personal Information"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Father Name -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Father Name"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvFatherName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Muhammad Ashraf"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- Contact Number -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact Number"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvContactNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0300-1234567"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- Email Address -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email Address"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="denariyamaryam@gmail.com"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- Program -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Program"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvProgram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BSIT"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- Form No -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Form No"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvFormNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PGC-33994"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- Roll No -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Roll No"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvRollNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="45"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- Admission Date -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Admission Date"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvAdmissionDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2021-10-27"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Academic Information Section -->
+        <LinearLayout
+            android:id="@+id/layoutAcademic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_margin="16dp"
+            android:visibility="gone"
+            android:background="@drawable/blue_border">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Academic History"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intermediate"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marks:"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"  />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="932/1100"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="#FFFFFF"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade Board:"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"  />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bise Lahore"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="#FFFFFF"  />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Matric"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marks:"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"  />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="925/1100"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="#FFFFFF"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade Board:"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"  />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bise Lahore"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="#FFFFFF"  />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

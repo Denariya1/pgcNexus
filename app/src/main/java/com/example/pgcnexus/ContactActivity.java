@@ -2,6 +2,7 @@ package com.example.pgcnexus;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +20,6 @@ public class ContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
 
-
         // Initialize UI elements
         etName = findViewById(R.id.et_name);
         etEmail = findViewById(R.id.et_email);
@@ -31,51 +31,32 @@ public class ContactActivity extends AppCompatActivity {
         TextView faculties = findViewById(R.id.faculties);
         TextView about = findViewById(R.id.about);
         TextView contactUs = findViewById(R.id.contact_us);
+        TextView signIn = findViewById(R.id.sign_in); // Added sign-in option
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ContactActivity.this, GuestHomeActivity.class));
-            }
+        home.setOnClickListener(v -> startActivity(new Intent(ContactActivity.this, GuestHomeActivity.class)));
+        faculties.setOnClickListener(v -> startActivity(new Intent(ContactActivity.this, FacultyActivity.class)));
+        about.setOnClickListener(v -> startActivity(new Intent(ContactActivity.this, AboutActivity.class)));
+        contactUs.setOnClickListener(v -> {
+            // Stay on ContactActivity
         });
-
-        faculties.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ContactActivity.this, FacultyActivity.class));
-            }
-        });
-
-        about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ContactActivity.this, AboutActivity.class));
-            }
-        });
-
-        contactUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Stay on ContactActivity since we're already here
-            }
-        });
+        signIn.setOnClickListener(v -> startActivity(new Intent(ContactActivity.this, SignIn.class)));
 
         // Handle Send Message button click
-        btnSendMessage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = etName.getText().toString().trim();
-                String email = etEmail.getText().toString().trim();
-                String message = etMessage.getText().toString().trim();
+        btnSendMessage.setOnClickListener(v -> {
+            String name = etName.getText().toString().trim();
+            String email = etEmail.getText().toString().trim();
+            String message = etMessage.getText().toString().trim();
 
-                if (name.isEmpty() || email.isEmpty() || message.isEmpty()) {
-                    Toast.makeText(ContactActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(ContactActivity.this, "Message sent successfully!", Toast.LENGTH_SHORT).show();
-                }
+            if (name.isEmpty() || email.isEmpty() || message.isEmpty()) {
+                Toast.makeText(ContactActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(ContactActivity.this, "Invalid email format. Please use format like abc@gmail.com", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(ContactActivity.this, "Message sent successfully!", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
     public void onMenuClick(View view) {
         int id = view.getId();
         Intent intent = null;
@@ -88,6 +69,8 @@ public class ContactActivity extends AppCompatActivity {
             intent = new Intent(this, AboutActivity.class);
         } else if (id == R.id.contact_us) {
             intent = new Intent(this, ContactActivity.class);
+        } else if (id == R.id.sign_in) {
+            intent = new Intent(this, SignIn.class); // Added SignIn
         }
 
         if (intent != null) {
@@ -95,3 +78,4 @@ public class ContactActivity extends AppCompatActivity {
         }
     }
 }
+

@@ -24,68 +24,81 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:padding="10dp"
-            android:textColor="@color/black"/>
+            android:textColor="#301E8A"/>
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="160dp"
+            android:layout_height="90dp"
             android:layout_gravity="end"
-            android:src="@drawable/logo" />
+            android:src="@drawable/pgclogo" />
     </LinearLayout>
     <!-- Header/Menu Section -->
+
+    <!-- Header Section -->
+
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="393dp"
         android:layout_height="wrap_content"
-        android:background="@color/purple_700"
-        android:padding="10dp"
+        android:background="#301E8A"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onMenuClick"
+            android:padding="8dp"
             android:text="HOME"
             android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:padding="8dp"
-            android:onClick="onMenuClick"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/faculties"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onMenuClick"
+            android:padding="8dp"
             android:text="FACULTIES"
             android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:padding="8dp"
-            android:onClick="onMenuClick"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onMenuClick"
+            android:padding="8dp"
             android:text="ABOUT"
             android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:padding="8dp"
-            android:onClick="onMenuClick"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/contact_us"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onMenuClick"
+            android:padding="8dp"
             android:text="CONTACT US"
             android:textColor="@android:color/white"
-            android:textStyle="bold"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sign_in"
+            android:layout_width="82dp"
+            android:layout_height="wrap_content"
+            android:onClick="onMenuClick"
             android:padding="8dp"
-            android:onClick="onMenuClick"/>
+            android:text="SIGN IN"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
     </LinearLayout>
-    <!-- Header Section -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_700"
+        android:background="#301E8A"
         android:padding="12dp">
 
         <TextView
@@ -123,7 +136,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PGC Nexus aspires to be a leading digital academic platform, excelling in accessibility, student engagement, academic management, and seamless communication within the Punjab Group of Colleges."
+            android:text="To foster an inclusive learning environment that nurtures creativity, leadership, and social responsibility, preparing graduates to contribute meaningfully to their communities and drive positive change in the world."
             android:textSize="14sp"
             android:textColor="@android:color/black"
             android:layout_marginBottom="12dp"/>
@@ -141,7 +154,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="The mission of PGC Nexus is to enhance student engagement and academic management by providing a seamless digital platform that ensures accessibility, efficiency, and collaboration. It aims to empower students with real-time academic resources, streamline communication between students and faculty, and foster a culture of learning and innovation. PGC Nexus is committed to creating a user-friendly environment that simplifies course management, promotes knowledge sharing, and supports the academic growth of students, ultimately contributing to a more connected, informed, and technologically advanced educational community."
+            android:text="Our mission is to deliver accessible, high-quality education that equips students to become responsible citizens, innovative thinkers, and impactful leaders in their respective fields. We are committed to fostering an inclusive environment where diversity is celebrated, creativity is encouraged, and every student is empowered to reach their full potential. Through a dedication to continuous innovation, cutting-edge research, and lifelong learning, we aim to cultivate not only academic excellence but also a strong sense of social responsibility and ethical leadership. By promoting sustainable development, nurturing entrepreneurial mindsets, and encouraging active community engagement, we strive to build strong partnerships with industries, organizations, and communities."
             android:textSize="14sp"
             android:textColor="@android:color/black"/>
     </LinearLayout>

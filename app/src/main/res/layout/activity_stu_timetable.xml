@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Top Heading with Blue Background -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Class Schedule"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:background="#301E8A"
+            android:padding="12dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Reusable card template for each day -->
+        <!-- CARD FOR MONDAY -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            card_view:cardElevation="4dp"
+            card_view:cardCornerRadius="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#F0F0F0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monday"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="April 22, 2025"
+                    android:textSize="16sp"
+                    android:textColor="#555555" />
+
+                <!-- Lectures -->
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 1: Mathematics"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 2: Physics"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 3: English"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 4: Computer Science"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Repeat the same block for other days with unique lecture names if needed -->
+
+        <!-- CARD FOR TUESDAY -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            card_view:cardElevation="4dp"
+            card_view:cardCornerRadius="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#F0F0F0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tuesday"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="April 23, 2025"
+                    android:textSize="16sp"
+                    android:textColor="#555555" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 1: Chemistry"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 2: Biology"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 3: History"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 4: Art"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- CARD FOR WEDNESDAY -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            card_view:cardElevation="4dp"
+            card_view:cardCornerRadius="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#F0F0F0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wednesday"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="April 24, 2025"
+                    android:textSize="16sp"
+                    android:textColor="#555555" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 1: Computer Networks"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 2: Operating Systems"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 3: Software Engineering"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 4: Database Systems"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CARD FOR THURSDAY -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            card_view:cardElevation="4dp"
+            card_view:cardCornerRadius="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#F0F0F0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thursday"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="April 25, 2025"
+                    android:textSize="16sp"
+                    android:textColor="#555555" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 1: Data Structures"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 2: Web Development"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 3: Mobile App Dev"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lecture 4: UI/UX Design"
+                    android:textSize="14sp"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Repeat similarly for Wednesday, Thursday, and Friday -->
+
+        <!-- You can keep the rest same and just add lectures similarly -->
+
+    </LinearLayout>
+</ScrollView>

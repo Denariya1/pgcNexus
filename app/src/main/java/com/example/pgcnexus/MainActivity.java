@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         btnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create an Intent to navigate to RegistrationActivity
-                Intent intent = new Intent(MainActivity.this, Registration.class);
+                // Create an Intent to navigate to SignInActivity
+                Intent intent = new Intent(MainActivity.this,SignIn.class);
                 startActivity(intent);
             }
         });

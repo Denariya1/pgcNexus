@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Suggestion Box Header with Dark Blue Background -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#301E8A"
+            android:padding="16dp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suggestion Box"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+        <!-- Note Section with Dark Blue Text -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Note:"
+            android:textColor="#301E8A"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="- This portal is for the sole purpose of lodging complaints or suggestions only. No requests other than complaints or suggestions will be entertained.\n- All other requests and queries shall be reported to the relevant authorities through the proper concerned channel."
+            android:textColor="#301E8A"
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Horizontal Radio Groups -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What do you want to do? *"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#000000"
+            android:textAllCaps="false"/>
+
+        <RadioGroup
+            android:id="@+id/typeGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/radioSuggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suggestion"
+                android:checked="true"
+                android:layout_marginEnd="16dp"/>
+
+            <RadioButton
+                android:id="@+id/radioComplaint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complaint"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Do you want to be anonymous? *"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#000000"/>
+
+        <RadioGroup
+            android:id="@+id/anonymousGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/radioAnonymousYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:layout_marginEnd="16dp"/>
+
+            <RadioButton
+                android:id="@+id/radioAnonymousNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:checked="true"/>
+        </RadioGroup>
+
+        <!-- Other Fields -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category *"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#000000"/>
+
+        <Spinner
+            android:id="@+id/categorySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Subject *"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#000000"/>
+
+        <EditText
+            android:id="@+id/subjectEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter subject"
+            android:inputType="textCapSentences"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#000000"/>
+
+        <EditText
+            android:id="@+id/descriptionEditText"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:hint="Enter description"
+            android:inputType="textMultiLine|textCapSentences"
+            android:gravity="top|start"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Vertical Button Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/attachButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Attach File"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#301E8A"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/selectedFileTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No file selected"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"/>
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:backgroundTint="#301E8A"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
