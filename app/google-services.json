@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "459327621010",
+    "project_id": "pgcnexus",
+    "storage_bucket": "pgcnexus.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459327621010:android:8a2f4bbe43e1406e68234b",
+        "android_client_info": {
+          "package_name": "com.example.pgcnexus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUHHnQbtEdNWMA-IvFTKiSZSWKQJEFAZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
