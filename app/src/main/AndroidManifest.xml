@@ -13,6 +13,111 @@
         android:theme="@style/Theme.PGCNexus"
         tools:targetApi="31">
         <activity
+            android:name=".RegisterteacherAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AssignSubToteacherAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAllteachersAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAllTeacherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MarksheetAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FaculityAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnnouncementAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PostNoticeAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadChallanAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageCoursesAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AttendanceReportAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditstudentAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ItemLectureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CircularProgressBlueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StringsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CoursesDriveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CoursesBooksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CoursesGradesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CourseAnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CourseAssignmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CourseAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CourseOutlineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CourseItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CourseDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StuCoursesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StuLecSchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TeacherProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CardChallanItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageGuestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageStudentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageTeacherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ItemChatUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ItemChatBotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatMessageItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatbotActivity"
+            android:exported="false" />
+        <activity
             android:name=".StuSuggestionActivity"
             android:exported="false" />
         <activity
@@ -20,15 +125,6 @@
             android:exported="false" />
         <activity
             android:name=".RegisteredCoursesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StuAnnouncementsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StuTimetableActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StuLeavestatusActivity"
             android:exported="false" />
         <activity
             android:name=".StuFeechallanActivity"

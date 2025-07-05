@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Main Heading -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="All Courses"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#301E8A"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Program Selection Spinner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Program:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#301E8A"
+                android:layout_marginRight="8dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_programs"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:minWidth="200dp"/>
+        </LinearLayout>
+
+        <!-- Subheading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Courses"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#301E8A"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Horizontal scroll for table only -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal">
+
+            <TableLayout
+                android:id="@+id/table_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:background="@android:drawable/dialog_holo_light_frame">
+
+                <!-- Table Headings Row -->
+                <TableRow
+                    android:background="#301E8A"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Index No"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Course Code"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Course Name"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Subjects"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Total Sem/Year"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+                </TableRow>
+
+                <!-- Sample Data Rows will be populated programmatically -->
+            </TableLayout>
+        </HorizontalScrollView>
+
+        <!-- Add Course Button -->
+        <Button
+            android:id="@+id/btn_add_course"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Add Course"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#301E8A"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>

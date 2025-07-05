@@ -37,7 +37,7 @@
     <!-- Header Section -->
 
     <LinearLayout
-        android:layout_width="393dp"
+        android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:background="#301E8A"
         android:gravity="center"

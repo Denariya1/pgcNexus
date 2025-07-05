@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.pgcnexus" />
-                  <option name="mobileSdkAppId" value="1:548383594880:android:bd2958d919991be16d0965" />
-                  <option name="projectId" value="pgcp-df638" />
-                  <option name="projectNumber" value="548383594880" />
+                  <option name="mobileSdkAppId" value="1:459327621010:android:8a2f4bbe43e1406e68234b" />
+                  <option name="projectId" value="pgcnexus" />
+                  <option name="projectNumber" value="459327621010" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

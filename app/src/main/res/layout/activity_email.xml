@@ -5,14 +5,10 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="#FFFFFF">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-        <!-- Header -->
-        <!-- Header -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,58 +16,36 @@
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:background="#301E8A"/>
+            android:background="#301E8A"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#301E8A"
+            android:backgroundTintMode="src_in"
+            android:elevation="4dp" />
 
-
-        <!-- Course/Section -->
-        <TextView
-            android:id="@+id/textView_course_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Course/Section *"
-            android:textStyle="bold"
-            android:layout_marginTop="4dp" />
-
-        <Spinner
-            android:id="@+id/spinner_course"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Divider -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:layout_marginBottom="16dp"
-            android:background="#CCCCCC" />
-
-        <!-- From -->
         <TextView
             android:id="@+id/textView_from_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="From *"
             android:textStyle="bold" />
-
         <EditText
             android:id="@+id/editText_from"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="faisal1.iqbal@yahoo.com"
-            android:enabled="false"
+            android:hint="Enter your email"
             android:inputType="textEmailAddress"
             android:background="@android:drawable/editbox_background"
             android:textColor="#555555"
             android:layout_marginBottom="16dp" />
-
-        <!-- Subject -->
         <TextView
             android:id="@+id/textView_subject_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Subject *"
             android:textStyle="bold" />
-
         <EditText
             android:id="@+id/editText_subject"
             android:layout_width="match_parent"
@@ -79,28 +53,38 @@
             android:hint="Enter subject here"
             android:inputType="text"
             android:layout_marginBottom="16dp" />
-
-        <!-- Message -->
         <TextView
             android:id="@+id/textView_message_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Message *"
             android:textStyle="bold" />
-
         <EditText
             android:id="@+id/editText_message"
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:hint="Write your message here"
             android:gravity="top|start"
-            android:hint="Type your message..."
             android:inputType="textMultiLine"
             android:background="@android:drawable/edit_text"
-            android:layout_marginBottom="20dp"
-            android:scrollbars="vertical"
-            android:maxLines="8" />
-
-        <!-- Send Button -->
+            android:padding="12dp"
+            android:textColor="#555555"
+            android:layout_marginBottom="12dp" />
+        <Button
+            android:id="@+id/button_choose_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose File"
+            android:backgroundTint="#301E8A"
+            android:textColor="#FFFFFF" />
+        <TextView
+            android:id="@+id/text_selected_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No file selected"
+            android:textColor="#777777"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp" />
         <Button
             android:id="@+id/button_send"
             android:layout_width="match_parent"
@@ -110,15 +94,11 @@
             android:backgroundTint="#301E8A"
             android:textColor="#FFFFFF"
             android:layout_marginBottom="24dp" />
-
-        <!-- Divider -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#CCCCCC"
             android:layout_marginBottom="16dp" />
-
-        <!-- Sent Mails -->
         <TextView
             android:id="@+id/textView_sent_mails_header"
             android:layout_width="wrap_content"
@@ -127,32 +107,6 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp" />
-
-        <!-- Table Header -->
-        <LinearLayout
-            android:id="@+id/layout_sent_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:background="#E0E0E0">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Date"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="Subject"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <!-- Total Sent Text -->
         <TextView
             android:id="@+id/text_total_sent"
             android:layout_width="wrap_content"

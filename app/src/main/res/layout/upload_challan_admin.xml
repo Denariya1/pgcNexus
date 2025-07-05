@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload Challan"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:background="#301E8A"
+            android:padding="14dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="4dp" />
+
+        <!-- Program Spinner -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Program:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#301E8A"
+            android:layout_marginBottom="6dp" />
+
+        <Spinner
+            android:id="@+id/spinner_programs"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Month / Semester -->
+        <EditText
+            android:id="@+id/et_month"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Month / Semester"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Amount -->
+        <EditText
+            android:id="@+id/et_amount"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Amount (PKR)"
+            android:inputType="number"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Due Date -->
+        <EditText
+            android:id="@+id/et_due_date"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Due Date (e.g., 15-June-2025)"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Upload File Button -->
+        <Button
+            android:id="@+id/btn_upload_file"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Upload Challan File (PDF/Image)"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#301E8A"
+            android:layout_marginBottom="20dp"
+            android:elevation="2dp" />
+
+        <!-- Paid Status Switch -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mark as Paid:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#301E8A" />
+
+            <Switch
+                android:id="@+id/switch_paid"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:minWidth="64dp"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/btn_submit_challan"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Submit Challan"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:backgroundTint="#301E8A"
+            android:elevation="3dp" />
+    </LinearLayout>
+</ScrollView>

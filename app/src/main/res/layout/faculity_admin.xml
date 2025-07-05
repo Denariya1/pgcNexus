@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Faculties"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:background="#301E8A"
+        android:padding="14dp"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/et_new_faculty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Faculty Name"
+        android:padding="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:drawable/editbox_background" />
+
+    <Button
+        android:id="@+id/btn_add_faculty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Faculty"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#301E8A"
+        android:textAllCaps="false"
+        android:layout_marginBottom="16dp" />
+
+    <ListView
+        android:id="@+id/list_faculties"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#CCC"
+        android:dividerHeight="1dp" />
+</LinearLayout>

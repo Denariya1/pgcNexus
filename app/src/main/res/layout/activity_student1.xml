@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Student Profile"
+                android:text="My Profile"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -133,7 +133,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Leave Status"
+                android:text="My Courses"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -157,7 +157,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Timetable"
+                android:text="Lecture Schedule"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -180,58 +180,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Announcements"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </androidx.cardview.widget.CardView>
-
-        <!-- Third Row -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card7"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="#301E8A"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toStartOf="@id/card6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card5"
-            app:layout_constraintWidth_percent="0.48">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Timetable"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card8"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="#301E8A"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/card7"
-            app:layout_constraintTop_toBottomOf="@id/card6"
-            app:layout_constraintWidth_percent="0.48">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:text="Suggestion Box"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

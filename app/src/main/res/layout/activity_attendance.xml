@@ -7,13 +7,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#301E8A">
+        android:layout_height="?attr/actionBarSize"
+        android:background="#301E8A"
+        android:elevation="4dp">
 
         <TextView
             android:id="@+id/toolbarTitle"
@@ -26,381 +29,48 @@
             android:layout_gravity="center" />
     </androidx.appcompat.widget.Toolbar>
 
+    <!-- Spinner with improved styling -->
     <Spinner
         android:id="@+id/spinnerClassSelector"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:padding="12dp"
         android:spinnerMode="dropdown"
         android:background="@android:drawable/btn_dropdown"
-        android:text="Select Class" />
+        android:popupBackground="#FFFFFF"/>
 
+    <!-- Attendance List -->
     <ScrollView
+        android:id="@+id/scrollViewAttendance"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:contentDescription="List of students and their attendance status"
+        android:padding="4dp">
 
         <LinearLayout
+            android:id="@+id/containerAttendance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:elevation="2dp">
 
-            <!-- Header Row -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:text="Student Name"
-                    android:textStyle="bold"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:text="Attendance"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <!-- Student Rows -->
-            <!-- Repeat this block for each student -->
-            <!-- 1 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Ali Raza" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/ali_present"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present" />
-
-                    <RadioButton
-                        android:id="@+id/ali_absent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Absent" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <!-- 2 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Fatima Khan" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/fatima_present"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present" />
-
-                    <RadioButton
-                        android:id="@+id/fatima_absent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Absent" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <!-- 3 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Zain Malik" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/zain_present"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present" />
-
-                    <RadioButton
-                        android:id="@+id/zain_absent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Absent" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <!-- 4 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Hassan Javed" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/hassan_present"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present" />
-
-                    <RadioButton
-                        android:id="@+id/hassan_absent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Absent" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <!-- 5 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Ayesha Siddiqui" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/ayesha_present"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present" />
-
-                    <RadioButton
-                        android:id="@+id/ayesha_absent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Absent" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <!-- 6 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Sara Ahmed" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/sara_present"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present" />
-
-                    <RadioButton
-                        android:id="@+id/sara_absent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Absent" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <!-- 7 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Bilal Asif" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/bilal_present"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present" />
-
-                    <RadioButton
-                        android:id="@+id/bilal_absent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Absent" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <!-- 8 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Mehwish Noor" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/mehwish_present"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present" />
-
-                    <RadioButton
-                        android:id="@+id/mehwish_absent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Absent" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <!-- 9 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Hamza Tariq" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/hamza_present"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present" />
-
-                    <RadioButton
-                        android:id="@+id/hamza_absent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Absent" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <!-- 10 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Sana Yousaf" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/sana_present"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present" />
-
-                    <RadioButton
-                        android:id="@+id/sana_absent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Absent" />
-                </RadioGroup>
-            </LinearLayout>
-
+            <!-- Content will be added dynamically -->
         </LinearLayout>
     </ScrollView>
 
+    <!-- Submit Button -->
     <Button
         android:id="@+id/btnSubmitAttendance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Submit Attendance"
         android:background="#301E8A"
         android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:padding="12dp"
-        android:layout_marginTop="8dp" />
+        android:textAllCaps="false"
+        android:textSize="16sp"/>
 </LinearLayout>
-

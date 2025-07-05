@@ -1,20 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".box">
+    android:layout_height="match_parent">
 
-    <!-- Dashboard Box -->
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/dashboardBox"
         android:layout_width="415dp"
         android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <View
             android:layout_width="match_parent"
@@ -24,14 +21,37 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerInParent="true"
             android:text="Dashboard"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold" />
-    </FrameLayout>
 
-    <!-- First Row -->
+        <ImageButton
+            android:id="@+id/profileIcon"
+            android:layout_width="49dp"
+            android:layout_height="59dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Profile"
+            android:src="@drawable/profile_button" />
+
+        <ImageButton
+            android:id="@+id/settingsIcon"
+            android:layout_width="49dp"
+            android:layout_height="59dp"
+            android:layout_toLeftOf="@id/profileIcon"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Settings"
+            android:src="@drawable/settings"
+            app:tint="@color/white" />
+    </RelativeLayout>
+
+    <!-- CardView 1 -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"
         android:layout_width="0dp"
@@ -40,9 +60,9 @@
         app:cardBackgroundColor="#301E8A"
         app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toStartOf="@id/card2"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dashboardBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/card2"
         app:layout_constraintWidth_percent="0.48">
 
         <TextView
@@ -55,6 +75,7 @@
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
+    <!-- CardView 2 -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card2"
         android:layout_width="0dp"
@@ -63,9 +84,9 @@
         app:cardBackgroundColor="#301E8A"
         app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/card1"
         app:layout_constraintTop_toBottomOf="@id/dashboardBox"
+        app:layout_constraintStart_toEndOf="@id/card1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintWidth_percent="0.48">
 
         <TextView
@@ -78,7 +99,7 @@
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
-    <!-- Second Row -->
+    <!-- CardView 3 -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card3"
         android:layout_width="0dp"
@@ -87,9 +108,9 @@
         app:cardBackgroundColor="#301E8A"
         app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toStartOf="@id/card4"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/card1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/card4"
         app:layout_constraintWidth_percent="0.48">
 
         <TextView
@@ -102,6 +123,7 @@
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
+    <!-- CardView 4 -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card4"
         android:layout_width="0dp"
@@ -110,9 +132,9 @@
         app:cardBackgroundColor="#301E8A"
         app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/card3"
         app:layout_constraintTop_toBottomOf="@id/card2"
+        app:layout_constraintStart_toEndOf="@id/card3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintWidth_percent="0.48">
 
         <TextView
@@ -125,7 +147,7 @@
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
-    <!-- Third Row -->
+    <!-- CardView 5 -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card5"
         android:layout_width="0dp"
@@ -134,9 +156,9 @@
         app:cardBackgroundColor="#301E8A"
         app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toStartOf="@id/card6"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/card3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/card6"
         app:layout_constraintWidth_percent="0.48">
 
         <TextView
@@ -149,6 +171,7 @@
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
+    <!-- CardView 6 -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card6"
         android:layout_width="0dp"
@@ -157,9 +180,9 @@
         app:cardBackgroundColor="#301E8A"
         app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/card5"
         app:layout_constraintTop_toBottomOf="@id/card4"
+        app:layout_constraintStart_toEndOf="@id/card5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintWidth_percent="0.48">
 
         <TextView

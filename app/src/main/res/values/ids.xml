@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="assignSubjectsHeader" type="id" />
+    <item name="teacherEditText" type="id" />
+    <item name="classSpinner" type="id" />
+    <item name="assignButton" type="id" />
+</resources>

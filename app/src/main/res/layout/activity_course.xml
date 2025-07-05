@@ -5,37 +5,60 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="#FFFFFF">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header -->
         <TextView
+            android:id="@+id/textView_heading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Course Material"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:background="#301E8A"/>
+            android:background="#301E8A"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Added Spinner for class selection -->
         <Spinner
-            android:id="@+id/spinner_course"
+            android:id="@+id/spinner_class"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginBottom="16dp" />
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="16dp"/>
 
         <EditText
             android:id="@+id/editText_subject"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text=""
-            android:inputType="text"
             android:hint="Enter Subject"
+            android:inputType="text"
             android:background="@android:drawable/editbox_background"
             android:textColor="#555555"
             android:layout_marginBottom="16dp" />
-        <!-- Send Button -->
+
+        <Button
+            android:id="@+id/button_choose_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose File"
+            android:backgroundTint="#301E8A"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/text_selected_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No file selected"
+            android:textColor="#777777"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp" />
+
         <Button
             android:id="@+id/button_send"
             android:layout_width="match_parent"
@@ -43,7 +66,6 @@
             android:text="Add"
             android:textAllCaps="false"
             android:backgroundTint="#301E8A"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="24dp" />
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 </ScrollView>

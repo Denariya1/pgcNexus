@@ -17,7 +17,7 @@ public class Student1Activity extends AppCompatActivity {
 
     // Declare all card views
     private CardView cardProfile, cardCourses, cardFeeChallan, cardLeaveStatus,
-            cardTimetable, cardAnnouncements, cardActivityLog, cardSuggestionBox;
+            cardLectureSchedule, cardSuggestionBox;
     private ImageButton settingsButton;
 
     @Override
@@ -53,10 +53,8 @@ public class Student1Activity extends AppCompatActivity {
         cardCourses = findViewById(R.id.card2);
         cardFeeChallan = findViewById(R.id.card3);
         cardLeaveStatus = findViewById(R.id.card4);
-        cardTimetable = findViewById(R.id.card5);
-        cardAnnouncements = findViewById(R.id.card6);
-        cardActivityLog = findViewById(R.id.card7);
-        cardSuggestionBox = findViewById(R.id.card8);
+        cardLectureSchedule = findViewById(R.id.card5);  // Ensure Lecture Schedule card is initialized
+        cardSuggestionBox = findViewById(R.id.card6);  // Suggestion Box card position remains the same
 
         // Initialize settings button
         settingsButton = findViewById(R.id.settingsButton);
@@ -73,16 +71,12 @@ public class Student1Activity extends AppCompatActivity {
                 startActivity(new Intent(this, StuFeechallanActivity.class)));
 
         cardLeaveStatus.setOnClickListener(v ->
-                startActivity(new Intent(this, StuLeavestatusActivity.class)));
+                startActivity(new Intent(this, StuCoursesActivity.class)));
 
-        cardTimetable.setOnClickListener(v ->
-                startActivity(new Intent(this, StuTimetableActivity.class)));
+        cardLectureSchedule.setOnClickListener(v ->  // Click listener for Lecture Schedule card
+                startActivity(new Intent(this, StuLecSchActivity.class)));
 
-        cardAnnouncements.setOnClickListener(v ->
-                startActivity(new Intent(this, StuAnnouncementsActivity.class)));
-
-        cardActivityLog.setOnClickListener(v ->
-                startActivity(new Intent(this, LogActivity.class)));
+        // Removed cardTimetable and cardAnnouncements click listeners
 
         cardSuggestionBox.setOnClickListener(v ->
                 startActivity(new Intent(this, StuSuggestionActivity.class)));

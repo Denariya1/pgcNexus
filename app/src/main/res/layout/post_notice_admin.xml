@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Post Notice"
+            android:textColor="#FFFFFF"
+            android:background="#301E8A"
+            android:padding="14dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Notice Title -->
+        <EditText
+            android:id="@+id/et_notice_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Notice Title"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background_normal"
+            android:textColorHint="#888888"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Notice Description -->
+        <EditText
+            android:id="@+id/et_notice_body"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:hint="Write detailed notice here..."
+            android:gravity="top|start"
+            android:padding="12dp"
+            android:inputType="textMultiLine"
+            android:background="@android:drawable/editbox_background_normal"
+            android:textColorHint="#888888"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Audience Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Audience"
+            android:textSize="16sp"
+            android:textColor="#301E8A"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinner_audience"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Attach File -->
+        <Button
+            android:id="@+id/btn_attach_file"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Attach File (PDF/Image)"
+            android:backgroundTint="#301E8A"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Post Button -->
+        <Button
+            android:id="@+id/btn_post_notice"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Post Notice"
+            android:backgroundTint="#301E8A"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,149 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white">
+    android:background="#FFFFFF">
 
-    <!-- Header Section -->
+    <!-- Main Content (LinearLayout with your UI) -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="10dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#FFFFFF">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Punjab Group Of Colleges"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:padding="20dp"
-            android:textColor="#301E8A"/>
-
-        <ImageView
-            android:layout_width="160dp"
-            android:layout_height="90dp"
-            android:layout_gravity="end"
-            android:src="@drawable/pgclogo" />
-
-    </LinearLayout>
-    <!-- Header/Menu Section -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#301E8A"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="HOME"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:padding="8dp"
-            android:onClick="onMenuClick"/>
-
-        <TextView
-            android:id="@+id/faculties"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FACULTIES"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:padding="8dp"
-            android:onClick="onMenuClick"/>
-
-        <TextView
-            android:id="@+id/about"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ABOUT"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:padding="8dp"
-            android:onClick="onMenuClick"/>
-
-        <TextView
-            android:id="@+id/contact_us"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CONTACT US"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:padding="8dp"
-            android:onClick="onMenuClick"/>
-        <TextView
-            android:id="@+id/sign_in"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SIGN IN"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:padding="8dp"
-            android:onClick="onMenuClick"/>
-    </LinearLayout>
-    <ViewFlipper
-        android:id="@+id/viewFlipper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        <!-- Header Section -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="10dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Punjab Group Of Colleges"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="20dp"
+                android:textColor="#301E8A"/>
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="90dp"
+                android:layout_gravity="end"
+                android:src="@drawable/pgclogo" />
+        </LinearLayout>
+
+        <!-- Header/Menu Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#301E8A"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOME"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:onClick="onMenuClick"/>
+
+            <TextView
+                android:id="@+id/faculties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FACULTIES"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:onClick="onMenuClick"/>
+
+            <TextView
+                android:id="@+id/about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ABOUT"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:onClick="onMenuClick"/>
+
+            <TextView
+                android:id="@+id/contact_us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONTACT US"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:onClick="onMenuClick"/>
+
+            <TextView
+                android:id="@+id/sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIGN IN"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:onClick="onMenuClick"/>
+        </LinearLayout>
+
+        <!-- ViewFlipper Section (Image Sliders) -->
+        <ViewFlipper
+            android:id="@+id/viewFlipper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:autoStart="true"
+            android:flipInterval="3000"
+            android:inAnimation="@android:anim/fade_in"
+            android:outAnimation="@android:anim/fade_out">
+
+            <!-- Slide 1 -->
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/main_img"
                 android:scaleType="centerCrop" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
+            <!-- Slide 2 -->
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/labimage"
                 android:scaleType="centerCrop" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
+            <!-- Slide 3 -->
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/shapecareer"
                 android:scaleType="centerCrop" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
+            <!-- Slide 4 -->
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/details"
                 android:scaleType="centerCrop" />
-        </LinearLayout>
 
-    </ViewFlipper>
+        </ViewFlipper>
+    </LinearLayout>
 
-
-
-</LinearLayout>
+    <!-- Messenger-Style Chat Button (Floating at Bottom-Right Corner) -->
+    <ImageButton
+        android:id="@+id/chatbot_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/chatbot_button_bg"
+        android:src="@android:drawable/ic_dialog_email"
+        android:tint="#FFFFFF"
+        android:onClick="openChatbot" />
+</FrameLayout>
