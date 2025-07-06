@@ -16,6 +16,9 @@
             android:name=".RegisterteacherAdminActivity"
             android:exported="false" />
         <activity
+            android:name=".AddTeacherActivity"
+            android:exported="false" />
+        <activity
             android:name=".AssignSubToteacherAdminActivity"
             android:exported="false" />
         <activity

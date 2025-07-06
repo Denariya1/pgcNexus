@@ -3,44 +3,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     android:background="#FFFFFF">
 
-    <TextView
+    <!-- Header -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Manage Faculties"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:background="#301E8A"
-        android:padding="14dp"
-        android:layout_marginBottom="16dp" />
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/et_new_faculty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Faculty Name"
-        android:padding="12dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:drawable/editbox_background" />
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/back"
+            android:contentDescription="Back" />
 
-    <Button
-        android:id="@+id/btn_add_faculty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Faculty"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#301E8A"
-        android:textAllCaps="false"
-        android:layout_marginBottom="16dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="Manage Faculties"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 
-    <ListView
-        android:id="@+id/list_faculties"
+    <!-- Content -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="#CCC"
-        android:dividerHeight="1dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/et_new_faculty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Faculty Name"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/input_field"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btn_add_faculty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Faculty"
+            android:textColor="#FFFFFF"
+            android:background="#301E8A"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Faculties List"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#301E8A" />
+
+        <ListView
+            android:id="@+id/list_faculties"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="#E0E0E0"
+            android:dividerHeight="1dp"
+            android:background="@android:color/white" />
+
+    </LinearLayout>
 </LinearLayout>
