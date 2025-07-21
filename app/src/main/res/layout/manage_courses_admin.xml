@@ -10,25 +10,45 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Main Heading -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="All Courses"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:background="#301E8A"
-            android:gravity="center"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Program Selection Spinner -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="16dp"
+            android:background="#301E8A"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/back"
+                android:contentDescription="Back"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="All Courses"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:layout_marginStart="8dp" /> </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
             android:gravity="center_vertical">
 
             <TextView
@@ -47,7 +67,29 @@
                 android:minWidth="200dp"/>
         </LinearLayout>
 
-        <!-- Subheading -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Semester:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#301E8A"
+                android:layout_marginRight="8dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_semesters"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:minWidth="200dp"/>
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,7 +99,6 @@
             android:textColor="#301E8A"
             android:layout_marginBottom="8dp" />
 
-        <!-- Horizontal scroll for table only -->
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,7 +111,6 @@
                 android:stretchColumns="*"
                 android:background="@android:drawable/dialog_holo_light_frame">
 
-                <!-- Table Headings Row -->
                 <TableRow
                     android:background="#301E8A"
                     android:padding="8dp">
@@ -116,11 +156,9 @@
                         android:gravity="center" />
                 </TableRow>
 
-                <!-- Sample Data Rows will be populated programmatically -->
             </TableLayout>
         </HorizontalScrollView>
 
-        <!-- Add Course Button -->
         <Button
             android:id="@+id/btn_add_course"
             android:layout_width="match_parent"

@@ -1,6 +1,7 @@
 package com.example.pgcnexus;
 
 import android.app.AlertDialog;
+import android.content.Intent; // Required for Intent
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.Gravity;
@@ -9,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView; // Required for ImageView
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TableLayout;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +30,11 @@ public class ManageCoursesAdminActivity extends AppCompatActivity {
 
     private TableLayout tableLayout;
     private Spinner spinnerPrograms;
-    private Map<String, List<Course>> programCoursesMap;
+    private Spinner spinnerSemesters;
+    private ImageView backArrow; // Declare ImageView for back arrow
+    private TextView headerTitle; // Declare TextView for header title
+
+    private Map<String, Map<String, List<Course>>> programSemesterCoursesMap;
     private int courseIndex = 1;
 
     @Override
@@ -37,71 +44,89 @@ public class ManageCoursesAdminActivity extends AppCompatActivity {
 
         tableLayout = findViewById(R.id.table_layout);
         spinnerPrograms = findViewById(R.id.spinner_programs);
+        spinnerSemesters = findViewById(R.id.spinner_semesters);
+        backArrow = findViewById(R.id.backArrow); // Initialize back arrow ImageView
+        headerTitle = findViewById(R.id.headerTitle); // Initialize header title TextView
         Button btnAddCourse = findViewById(R.id.btn_add_course);
 
-        // Initialize the program-course mapping with realistic courses
-        initializeProgramCourses();
+        // Set the header title text
+        headerTitle.setText("All Courses");
 
-        // Set up the spinner
-        setupSpinner();
+        // --- Back Arrow Functionality ---
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Define the activity you want to go back to.
+                // Replace AdminHomeActivity.class with the actual activity.
+                Intent intent = new Intent(ManageCoursesAdminActivity.this, ManageStudentActivity.class);
+                startActivity(intent);
+                finish(); // Close the current activity
+            }
+        });
+
+        // Initialize the program-semester-course mapping with realistic courses
+        initializeProgramSemesterCourses();
+
+        // Set up the spinners
+        setupProgramSpinner();
+        setupSemesterSpinner();
 
         btnAddCourse.setOnClickListener(view -> showAddCourseDialog());
     }
 
-    private void initializeProgramCourses() {
-        programCoursesMap = new HashMap<>();
+    private void initializeProgramSemesterCourses() {
+        programSemesterCoursesMap = new HashMap<>();
 
-        // BSIT21A - Information Technology courses
-        List<Course> bsit21aCourses = new ArrayList<>();
-        bsit21aCourses.add(new Course("IT101", "Introduction to Programming", "4", "8 Semesters"));
-        bsit21aCourses.add(new Course("IT102", "Data Structures", "4", "8 Semesters"));
-        bsit21aCourses.add(new Course("IT103", "Database Systems", "4", "8 Semesters"));
-        bsit21aCourses.add(new Course("IT104", "Computer Networks", "4", "8 Semesters"));
-        bsit21aCourses.add(new Course("IT105", "Web Development", "4", "8 Semesters"));
-        programCoursesMap.put("BSIT21A", bsit21aCourses);
+        // Helper to add courses to a specific program and semester
+        addCoursesToMap("BSIT", "1", Arrays.asList(
+                new Course("IT101", "Introduction to Programming", "4", "8 Semesters"),
+                new Course("IT102", "Data Structures", "4", "8 Semesters")
+        ));
+        addCoursesToMap("BSIT", "2", Arrays.asList(
+                new Course("IT201", "Object-Oriented Programming", "4", "8 Semesters"),
+                new Course("IT202", "Discrete Structures", "4", "8 Semesters")
+        ));
+        addCoursesToMap("BSIT", "3", Arrays.asList(
+                new Course("IT301", "Database Systems", "4", "8 Semesters"),
+                new Course("IT302", "Computer Networks", "4", "8 Semesters")
+        ));
+        addCoursesToMap("BSIT", "4", Arrays.asList(
+                new Course("IT401", "Web Development", "4", "8 Semesters"),
+                new Course("IT402", "Operating Systems", "4", "8 Semesters")
+        ));
 
-        // BSIT21B - Advanced IT courses
-        List<Course> bsit21bCourses = new ArrayList<>();
-        bsit21bCourses.add(new Course("IT201", "Advanced Programming", "4", "8 Semesters"));
-        bsit21bCourses.add(new Course("IT202", "Algorithms Analysis", "4", "8 Semesters"));
-        bsit21bCourses.add(new Course("IT203", "Network Security", "4", "8 Semesters"));
-        bsit21bCourses.add(new Course("IT204", "Mobile App Development", "4", "8 Semesters"));
-        bsit21bCourses.add(new Course("IT205", "Cloud Computing", "4", "8 Semesters"));
-        programCoursesMap.put("BSIT21B", bsit21bCourses);
+        addCoursesToMap("BSCS", "1", Arrays.asList(
+                new Course("CS101", "Calculus and Analytical Geometry", "3", "8 Semesters"),
+                new Course("CS102", "Introduction to Computing", "3", "8 Semesters")
+        ));
+        addCoursesToMap("BSCS", "2", Arrays.asList(
+                new Course("CS201", "Digital Logic Design", "3", "8 Semesters"),
+                new Course("CS202", "Programming Fundamentals", "3", "8 Semesters")
+        ));
 
-        // BSCS22A - Computer Science courses
-        List<Course> bscs22aCourses = new ArrayList<>();
-        bscs22aCourses.add(new Course("CS101", "Discrete Mathematics", "4", "8 Semesters"));
-        bscs22aCourses.add(new Course("CS102", "Computer Organization", "4", "8 Semesters"));
-        bscs22aCourses.add(new Course("CS103", "Operating Systems", "4", "8 Semesters"));
-        bscs22aCourses.add(new Course("CS104", "Artificial Intelligence", "4", "8 Semesters"));
-        bscs22aCourses.add(new Course("CS105", "Machine Learning", "4", "8 Semesters"));
-        programCoursesMap.put("BSCS22A", bscs22aCourses);
-
-        // BSSE23A - Software Engineering courses
-        List<Course> bsse23aCourses = new ArrayList<>();
-        bsse23aCourses.add(new Course("SE101", "Software Engineering", "4", "8 Semesters"));
-        bsse23aCourses.add(new Course("SE102", "Software Design", "4", "8 Semesters"));
-        bsse23aCourses.add(new Course("SE103", "Software Testing", "4", "8 Semesters"));
-        bsse23aCourses.add(new Course("SE104", "Software Project Management", "4", "8 Semesters"));
-        bsse23aCourses.add(new Course("SE105", "DevOps Practices", "4", "8 Semesters"));
-        programCoursesMap.put("BSSE23A", bsse23aCourses);
-
-        // BBA21A - Business Administration courses
-        List<Course> bba21aCourses = new ArrayList<>();
-        bba21aCourses.add(new Course("BA101", "Business Statistics", "4", "8 Semesters"));
-        bba21aCourses.add(new Course("BA102", "Financial Accounting", "4", "8 Semesters"));
-        bba21aCourses.add(new Course("BA103", "Marketing Management", "4", "8 Semesters"));
-        bba21aCourses.add(new Course("BA104", "Business Communication", "4", "8 Semesters"));
-        bba21aCourses.add(new Course("BA105", "Organizational Behavior", "4", "8 Semesters"));
-        programCoursesMap.put("BBA21A", bba21aCourses);
+        addCoursesToMap("BBA", "1", Arrays.asList(
+                new Course("BA101", "Principles of Management", "3", "8 Semesters"),
+                new Course("BA102", "Introduction to Business", "3", "8 Semesters")
+        ));
+        addCoursesToMap("BBA", "2", Arrays.asList(
+                new Course("BA201", "Microeconomics", "3", "8 Semesters"),
+                new Course("BA202", "Financial Accounting", "3", "8 Semesters")
+        ));
+        // Add more programs and semesters as needed
     }
 
-    private void setupSpinner() {
-        // Create program list
-        String[] programs = {"BSIT21A", "BSIT21B", "BSCS22A", "BSSE23A", "BBA21A"};
+    private void addCoursesToMap(String program, String semester, List<Course> courses) {
+        if (!programSemesterCoursesMap.containsKey(program)) {
+            programSemesterCoursesMap.put(program, new HashMap<>());
+        }
+        programSemesterCoursesMap.get(program).put(semester, courses);
+    }
 
-        // Create adapter for spinner
+    private void setupProgramSpinner() {
+        // Get unique program names from the map for the spinner
+        String[] programs = programSemesterCoursesMap.keySet().toArray(new String[0]);
+        Arrays.sort(programs); // Optional: sort programs alphabetically
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
@@ -110,12 +135,10 @@ public class ManageCoursesAdminActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPrograms.setAdapter(adapter);
 
-        // Set spinner listener
         spinnerPrograms.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedProgram = parent.getItemAtPosition(position).toString();
-                updateTableForProgram(selectedProgram);
+                updateTableForSelectedSpinners();
             }
 
             @Override
@@ -125,45 +148,98 @@ public class ManageCoursesAdminActivity extends AppCompatActivity {
         });
     }
 
-    private void updateTableForProgram(String program) {
+    private void setupSemesterSpinner() {
+        // Create semester list from 1 to 8
+        List<String> semesters = new ArrayList<>();
+        for (int i = 1; i <= 8; i++) {
+            semesters.add(String.valueOf(i));
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_item,
+                semesters
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSemesters.setAdapter(adapter);
+
+        spinnerSemesters.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                updateTableForSelectedSpinners();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing
+            }
+        });
+    }
+
+    private void updateTableForSelectedSpinners() {
         // Clear existing rows (except header)
         int childCount = tableLayout.getChildCount();
         if (childCount > 1) {
             tableLayout.removeViews(1, childCount - 1);
         }
 
-        // Reset course index for the new program
+        // Reset course index for the new selection
         courseIndex = 1;
 
-        // Add courses for the selected program
-        List<Course> courses = programCoursesMap.get(program);
-        if (courses != null) {
+        String selectedProgram = spinnerPrograms.getSelectedItem().toString();
+        String selectedSemester = spinnerSemesters.getSelectedItem().toString();
+
+        List<Course> courses = null;
+        if (programSemesterCoursesMap.containsKey(selectedProgram)) {
+            Map<String, List<Course>> semesterMap = programSemesterCoursesMap.get(selectedProgram);
+            if (semesterMap != null && semesterMap.containsKey(selectedSemester)) {
+                courses = semesterMap.get(selectedSemester);
+            }
+        }
+
+        if (courses != null && !courses.isEmpty()) {
             for (Course course : courses) {
                 addRowToTable(course.code, course.name, course.subjects, course.totalSem);
             }
+        } else {
+            // Display a message if no courses are found for the selection
+            TableRow noDataRow = new TableRow(this);
+            TextView noDataTv = new TextView(this);
+            noDataTv.setText("No courses found for this program and semester.");
+            noDataTv.setGravity(Gravity.CENTER);
+            noDataTv.setPadding(dpToPx(4), dpToPx(16), dpToPx(4), dpToPx(16));
+            noDataTv.setTextSize(16);
+            TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
+            params.span = 5; // Span across all 5 columns
+            noDataTv.setLayoutParams(params);
+            tableLayout.addView(noDataRow);
         }
     }
 
     private void showAddCourseDialog() {
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
-        layout.setPadding(50, 40, 50, 10);
+        layout.setPadding(dpToPx(20), dpToPx(15), dpToPx(20), dpToPx(5));
 
         EditText etCode = new EditText(this);
         etCode.setHint("Course Code");
+        etCode.setPadding(dpToPx(10), dpToPx(10), dpToPx(10), dpToPx(10));
         layout.addView(etCode);
 
         EditText etName = new EditText(this);
         etName.setHint("Course Name");
+        etName.setPadding(dpToPx(10), dpToPx(10), dpToPx(10), dpToPx(10));
         layout.addView(etName);
 
         EditText etSubjects = new EditText(this);
-        etSubjects.setHint("Subjects");
+        etSubjects.setHint("Subjects (e.g., 3)");
         etSubjects.setInputType(InputType.TYPE_CLASS_NUMBER);
+        etSubjects.setPadding(dpToPx(10), dpToPx(10), dpToPx(10), dpToPx(10));
         layout.addView(etSubjects);
 
         EditText etTotalSem = new EditText(this);
-        etTotalSem.setHint("Total Sem/Year");
+        etTotalSem.setHint("Total Sem/Year (e.g., 8 Semesters)");
+        etTotalSem.setPadding(dpToPx(10), dpToPx(10), dpToPx(10), dpToPx(10));
         layout.addView(etTotalSem);
 
         new AlertDialog.Builder(this)
@@ -178,19 +254,24 @@ public class ManageCoursesAdminActivity extends AppCompatActivity {
                     if (code.isEmpty() || name.isEmpty() || subjects.isEmpty() || totalSem.isEmpty()) {
                         Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                     } else {
-                        // Get currently selected program
                         String selectedProgram = spinnerPrograms.getSelectedItem().toString();
+                        String selectedSemester = spinnerSemesters.getSelectedItem().toString();
 
-                        // Add to the program's course list
-                        List<Course> courses = programCoursesMap.get(selectedProgram);
-                        if (courses == null) {
-                            courses = new ArrayList<>();
-                            programCoursesMap.put(selectedProgram, courses);
+                        // Add to the program's and semester's course list
+                        Course newCourse = new Course(code, name, subjects, totalSem);
+                        if (!programSemesterCoursesMap.containsKey(selectedProgram)) {
+                            programSemesterCoursesMap.put(selectedProgram, new HashMap<>());
                         }
-                        courses.add(new Course(code, name, subjects, totalSem));
+                        Map<String, List<Course>> semesterMap = programSemesterCoursesMap.get(selectedProgram);
+                        if (!semesterMap.containsKey(selectedSemester)) {
+                            semesterMap.put(selectedSemester, new ArrayList<>());
+                        }
+                        semesterMap.get(selectedSemester).add(newCourse);
 
-                        // Add to table
-                        addRowToTable(code, name, subjects, totalSem);
+                        // Refresh the table to include the newly added course if the current selection matches
+                        updateTableForSelectedSpinners();
+
+                        Toast.makeText(this, "Course Added Successfully!", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .setNegativeButton("Cancel", null)
@@ -199,7 +280,7 @@ public class ManageCoursesAdminActivity extends AppCompatActivity {
 
     private void addRowToTable(String code, String name, String subjects, String totalSem) {
         TableRow row = new TableRow(this);
-        row.setBackgroundColor(courseIndex % 2 == 0 ? 0xFFF5F5F5 : 0xFFFFFFFF);
+        row.setBackgroundColor(courseIndex % 2 == 0 ? 0xFFF5F5F5 : 0xFFFFFFFF); // Use hex colors directly
 
         row.addView(createTextView(String.valueOf(courseIndex), 100));
         row.addView(createTextView(code, 120));
@@ -216,8 +297,14 @@ public class ManageCoursesAdminActivity extends AppCompatActivity {
         tv.setText(text);
         tv.setGravity(Gravity.CENTER);
         tv.setWidth((int) (widthDp * getResources().getDisplayMetrics().density));
-        tv.setPadding(4, 16, 4, 16);
+        tv.setPadding(dpToPx(4), dpToPx(16), dpToPx(4), dpToPx(16));
+        tv.setTextColor(0xFF000000); // Set text color to black for better visibility on white/light gray background
         return tv;
+    }
+
+    // Helper method to convert dp to pixels
+    private int dpToPx(int dp) {
+        return (int) (dp * getResources().getDisplayMetrics().density);
     }
 
     // Helper class to represent a Course

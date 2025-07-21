@@ -1,9 +1,11 @@
 package com.example.pgcnexus;
 
+import android.content.Intent; // Import for Intent
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView; // Import for ImageView
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,6 +18,7 @@ public class AttendanceReportAdminActivity extends AppCompatActivity {
 
     private Spinner programSpinner;
     private LinearLayout cardsContainer;
+    private ImageView backArrow; // Declare ImageView for back arrow
     private List<Student> allStudents = new ArrayList<>();
 
     @Override
@@ -28,6 +31,18 @@ public class AttendanceReportAdminActivity extends AppCompatActivity {
         cardsContainer = findViewById(R.id.cardsContainer);
         TextView headerTitle = findViewById(R.id.headerTitle);
         headerTitle.setText("Attendance Report");
+        backArrow = findViewById(R.id.backArrow); // Initialize back arrow ImageView
+
+        // --- Back Arrow Functionality ---
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate back to AdminHomeActivity (or whichever activity you intend)
+                Intent intent = new Intent(AttendanceReportAdminActivity.this, ManageStudentActivity.class); // <-- CHANGE THIS to your desired destination activity
+                startActivity(intent);
+                finish(); // Close the current activity
+            }
+        });
 
         // Setup student data
         setupStudentData();
@@ -110,11 +125,12 @@ public class AttendanceReportAdminActivity extends AppCompatActivity {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-        cardParams.setMargins(16, 16, 16, 16);
+        cardParams.setMargins(dpToPx(16), dpToPx(16), dpToPx(16), dpToPx(16)); // Use dpToPx for margins
         card.setLayoutParams(cardParams);
-        card.setCardElevation(8);
-        card.setRadius(16);
-        card.setContentPadding(24, 24, 24, 24);
+        card.setCardElevation(dpToPx(8)); // Use dpToPx for elevation
+        card.setRadius(dpToPx(16)); // Use dpToPx for radius
+        card.setContentPadding(dpToPx(24), dpToPx(24), dpToPx(24), dpToPx(24)); // Use dpToPx for padding
+        card.setCardBackgroundColor(0xFFFFFFFF); // White background for card
 
         LinearLayout cardContent = new LinearLayout(this);
         cardContent.setOrientation(LinearLayout.VERTICAL);
@@ -136,8 +152,18 @@ public class AttendanceReportAdminActivity extends AppCompatActivity {
         textView.setText(text);
         textView.setTextSize(size);
         textView.setTypeface(null, bold ? android.graphics.Typeface.BOLD : android.graphics.Typeface.NORMAL);
-        textView.setPadding(0, 4, 0, 4);
+        textView.setPadding(0, dpToPx(4), 0, dpToPx(4)); // Use dpToPx for padding
+        textView.setTextColor(0xFF000000); // Black text color
         layout.addView(textView);
+    }
+
+    /**
+     * Helper method to convert dp to pixels for programmatic view creation.
+     * @param dp The dp value to convert.
+     * @return The equivalent pixel value.
+     */
+    private int dpToPx(int dp) {
+        return (int) (dp * getResources().getDisplayMetrics().density);
     }
 
     class Student {

@@ -73,7 +73,7 @@ public class FaculityAdminActivity extends AppCompatActivity {
         });
 
         backArrow.setOnClickListener(v -> {
-            Intent intent = new Intent(FaculityAdminActivity.this, AdminHomeActivity.class);
+            Intent intent = new Intent(FaculityAdminActivity.this, ManageStudentActivity.class);
             startActivity(intent);
             finish();
         });
