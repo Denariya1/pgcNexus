@@ -20,10 +20,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class AddTeacherActivity extends AppCompatActivity {
 
     private static final String TAG = "AddTeacherActivity";
-    private EditText fullNameEditText, emailEditText, departmentEditText, 
-                   phoneEditText, qualificationEditText, subjectsEditText;
+    private EditText fullNameEditText, emailEditText, departmentEditText,
+            phoneEditText, qualificationEditText, subjectsEditText;
     private Button saveButton;
-    private ImageView backArrow;
+    private ImageView backArrow; // This is correctly declared and initialized
     private FirebaseFirestore db;
 
     @Override
@@ -33,13 +33,13 @@ public class AddTeacherActivity extends AppCompatActivity {
 
         // Initialize Firebase Firestore
         db = FirebaseFirestore.getInstance();
-        
+
         // Test Firebase connection
         testFirebaseConnection();
 
         // Initialize Views
         initializeViews();
-        setupClickListeners();
+        setupClickListeners(); // This method already sets up the back arrow click listener
     }
 
     private void initializeViews() {
@@ -50,14 +50,15 @@ public class AddTeacherActivity extends AppCompatActivity {
         qualificationEditText = findViewById(R.id.qualificationEditText);
         subjectsEditText = findViewById(R.id.subjectsEditText);
         saveButton = findViewById(R.id.saveButton);
-        backArrow = findViewById(R.id.backArrow);
+        backArrow = findViewById(R.id.backArrow); // Correctly initialized here
     }
 
     private void setupClickListeners() {
         backArrow.setOnClickListener(v -> {
+            // Your existing back arrow functionality
             Intent intent = new Intent(AddTeacherActivity.this, RegisterteacherAdminActivity.class);
             startActivity(intent);
-            finish();
+            finish(); // Finishes the current activity, removing it from the back stack
         });
 
         saveButton.setOnClickListener(v -> saveTeacher());
@@ -72,9 +73,9 @@ public class AddTeacherActivity extends AppCompatActivity {
         String subjects = subjectsEditText.getText().toString().trim();
 
         // Validate input
-        if (TextUtils.isEmpty(fullName) || TextUtils.isEmpty(email) || 
-            TextUtils.isEmpty(department) || TextUtils.isEmpty(phone) || 
-            TextUtils.isEmpty(qualification) || TextUtils.isEmpty(subjects)) {
+        if (TextUtils.isEmpty(fullName) || TextUtils.isEmpty(email) ||
+                TextUtils.isEmpty(department) || TextUtils.isEmpty(phone) ||
+                TextUtils.isEmpty(qualification) || TextUtils.isEmpty(subjects)) {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -87,7 +88,7 @@ public class AddTeacherActivity extends AppCompatActivity {
 
         // Save to Firebase
         Log.d(TAG, "Attempting to save teacher: " + teacher.getFullName());
-        
+
         db.collection("teachers")
                 .add(teacher)
                 .addOnCompleteListener(new OnCompleteListener<com.google.firebase.firestore.DocumentReference>() {
@@ -97,10 +98,10 @@ public class AddTeacherActivity extends AppCompatActivity {
                             Log.d(TAG, "Teacher added successfully with ID: " + task.getResult().getId());
                             // Show success message
                             Toast.makeText(AddTeacherActivity.this, "Teacher added successfully!", Toast.LENGTH_LONG).show();
-                            
+
                             // Clear the form fields
                             clearFormFields();
-                            
+
                             // Navigate back to teacher list
                             Intent intent = new Intent(AddTeacherActivity.this, RegisterteacherAdminActivity.class);
                             startActivity(intent);
@@ -108,12 +109,12 @@ public class AddTeacherActivity extends AppCompatActivity {
                         } else {
                             Exception exception = task.getException();
                             Log.e(TAG, "Error adding teacher", exception);
-                            
+
                             String errorMessage = "Error adding teacher. ";
                             if (exception != null) {
                                 errorMessage += "Reason: " + exception.getMessage();
                                 Log.e(TAG, "Exception details: " + exception.toString());
-                                
+
                                 // Provide specific error messages based on exception type
                                 if (exception.getMessage().contains("permission")) {
                                     errorMessage = "Permission denied. Please check Firebase security rules.";
@@ -123,7 +124,7 @@ public class AddTeacherActivity extends AppCompatActivity {
                                     errorMessage = "Firebase quota exceeded. Please try again later.";
                                 }
                             }
-                            
+
                             Toast.makeText(AddTeacherActivity.this, errorMessage, Toast.LENGTH_LONG).show();
                         }
                     }
@@ -138,7 +139,7 @@ public class AddTeacherActivity extends AppCompatActivity {
         qualificationEditText.setText("");
         subjectsEditText.setText("");
     }
-    
+
     private void testFirebaseConnection() {
         // Test if Firebase is properly connected
         db.collection("test")
@@ -154,10 +155,10 @@ public class AddTeacherActivity extends AppCompatActivity {
                         db.collection("test").document("connection").delete();
                     } else {
                         Log.e(TAG, "Firebase connection test failed", task.getException());
-                        Toast.makeText(AddTeacherActivity.this, 
-                            "Firebase connection failed. Please check your internet connection and Firebase setup.", 
-                            Toast.LENGTH_LONG).show();
+                        Toast.makeText(AddTeacherActivity.this,
+                                "Firebase connection failed. Please check your internet connection and Firebase setup.",
+                                Toast.LENGTH_LONG).show();
                     }
                 });
     }
-} 
+}

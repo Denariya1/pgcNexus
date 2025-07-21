@@ -7,70 +7,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     android:background="#F5F5F5">
-
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#301E8A"
-        android:elevation="4dp">
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="#301E8A"
+    android:elevation="4dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" app:popupTheme="@style/ThemeOverlay.AppCompat.Light"> <TextView
+    android:id="@+id/toolbarTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Student Attendance Sheet"
+    android:textColor="#FFFFFF" android:textSize="20sp"
+    android:textStyle="bold"
+    android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/back" />
+</androidx.appcompat.widget.Toolbar>
 
-        <TextView
-            android:id="@+id/toolbarTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Student Attendance Sheet"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_gravity="center" />
-    </androidx.appcompat.widget.Toolbar>
-
-    <!-- Spinner with improved styling -->
     <Spinner
         android:id="@+id/spinnerClassSelector"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:padding="12dp"
         android:spinnerMode="dropdown"
         android:background="@android:drawable/btn_dropdown"
         android:popupBackground="#FFFFFF"/>
 
-    <!-- Attendance List -->
     <ScrollView
         android:id="@+id/scrollViewAttendance"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:contentDescription="List of students and their attendance status"
-        android:padding="4dp">
-
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:paddingStart="16dp" android:paddingEnd="16dp">
         <LinearLayout
-            android:id="@+id/containerAttendance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@android:color/white"
-            android:elevation="2dp">
+        android:id="@+id/containerAttendance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:elevation="2dp">
 
-            <!-- Content will be added dynamically -->
-        </LinearLayout>
+    </LinearLayout>
     </ScrollView>
 
-    <!-- Submit Button -->
     <Button
         android:id="@+id/btnSubmitAttendance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Submit Attendance"
-        android:background="#301E8A"
-        android:textColor="@android:color/white"
+        android:backgroundTint="#301E8A"
+        android:textColor="#FFFFFF"
         android:textAllCaps="false"
         android:textSize="16sp"/>
 </LinearLayout>

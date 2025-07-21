@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PGCNexus"
         tools:targetApi="31">
         <activity
+            android:name=".AdminProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterteacherAdminActivity"
             android:exported="false" />
         <activity

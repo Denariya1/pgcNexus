@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast; // Import the Toast class
 import androidx.appcompat.widget.PopupMenu;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,12 +14,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+// If you are using Firebase Authentication for logout, uncomment the following line:
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Student1Activity extends AppCompatActivity {
 
     // Declare all card views
     private CardView cardProfile, cardCourses, cardFeeChallan, cardLeaveStatus,
             cardLectureSchedule, cardSuggestionBox;
     private ImageButton settingsButton;
+
+    // If you are using Firebase Authentication, declare a FirebaseAuth instance:
+    // private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,9 @@ public class Student1Activity extends AppCompatActivity {
 
         // Setup settings button with popup menu
         setupSettingsButton();
+
+        // If using Firebase Authentication, initialize it here:
+        // mAuth = FirebaseAuth.getInstance();
     }
 
     private void setupWindowInsets() {
@@ -53,8 +63,8 @@ public class Student1Activity extends AppCompatActivity {
         cardCourses = findViewById(R.id.card2);
         cardFeeChallan = findViewById(R.id.card3);
         cardLeaveStatus = findViewById(R.id.card4);
-        cardLectureSchedule = findViewById(R.id.card5);  // Ensure Lecture Schedule card is initialized
-        cardSuggestionBox = findViewById(R.id.card6);  // Suggestion Box card position remains the same
+        cardLectureSchedule = findViewById(R.id.card5);
+        cardSuggestionBox = findViewById(R.id.card6);
 
         // Initialize settings button
         settingsButton = findViewById(R.id.settingsButton);
@@ -73,10 +83,8 @@ public class Student1Activity extends AppCompatActivity {
         cardLeaveStatus.setOnClickListener(v ->
                 startActivity(new Intent(this, StuCoursesActivity.class)));
 
-        cardLectureSchedule.setOnClickListener(v ->  // Click listener for Lecture Schedule card
+        cardLectureSchedule.setOnClickListener(v ->
                 startActivity(new Intent(this, StuLecSchActivity.class)));
-
-        // Removed cardTimetable and cardAnnouncements click listeners
 
         cardSuggestionBox.setOnClickListener(v ->
                 startActivity(new Intent(this, StuSuggestionActivity.class)));
@@ -85,10 +93,10 @@ public class Student1Activity extends AppCompatActivity {
     private void setupSettingsButton() {
         settingsButton.setOnClickListener(v -> {
             PopupMenu popup = new PopupMenu(this, v);
-            popup.getMenuInflater().inflate(R.menu.settings_menu, popup.getMenu());
+            popup.getMenuInflater().inflate(R.menu.settings_menu, popup.getMenu()); // Ensure R.menu.settings_menu exists
 
             popup.setOnMenuItemClickListener(item -> {
-                if (item.getItemId() == R.id.action_logout) {
+                if (item.getItemId() == R.id.action_logout) { // Ensure R.id.action_logout exists in settings_menu.xml
                     performLogout();
                     return true;
                 }
@@ -99,11 +107,20 @@ public class Student1Activity extends AppCompatActivity {
     }
 
     private void performLogout() {
-        // Add any logout logic here (clear preferences, stop services, etc.)
+        // --- Add any logout logic here ---
+
+        // If using Firebase Authentication, uncomment the following lines:
+        // if (mAuth != null) {
+        //     mAuth.signOut();
+        // }
+
+        // Display the "Logout successfully!" message
+        Toast.makeText(this, "Logged out successfully!", Toast.LENGTH_SHORT).show();
+
         // Navigate to login screen and clear back stack
-        Intent intent = new Intent(this, SignIn.class);
+        Intent intent = new Intent(this, SignIn.class); // Ensure 'SignIn.class' is the correct name for your login activity
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-        finish();
+        finish(); // Finish the current activity (Student1Activity)
     }
 }
