@@ -226,6 +226,29 @@
                     android:textColor="#FFFFFF"
                     android:layout_marginTop="4dp"/>
             </LinearLayout>
+            <!-- Semester -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Semester"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/tvSemester"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="8"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
 
             <!-- Form No -->
             <LinearLayout
@@ -237,7 +260,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Form No"
+                    android:text="CNIC No"
                     android:textSize="14sp"
                     android:textColor="#FFFFFF"/>
 
@@ -245,7 +268,7 @@
                     android:id="@+id/tvFormNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="PGC-33994"
+                    android:text="35202-3399414-3"
                     android:textSize="16sp"
                     android:textColor="#FFFFFF"
                     android:layout_marginTop="4dp"/>

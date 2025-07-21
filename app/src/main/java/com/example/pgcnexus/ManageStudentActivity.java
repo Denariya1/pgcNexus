@@ -37,13 +37,11 @@ public class ManageStudentActivity extends AppCompatActivity {
             }
         });
 
-        // Get references to all CardViews
+        // Get references to remaining CardViews
         CardView card1 = findViewById(R.id.card1); // Edit Students
         CardView card2 = findViewById(R.id.card2); // Attendance Report
         CardView card3 = findViewById(R.id.card3); // Manage Courses
         CardView card4 = findViewById(R.id.card4); // Upload Challan
-        CardView card5 = findViewById(R.id.card5); // Post Notice
-        CardView card6 = findViewById(R.id.card6); // Announcements
         CardView card7 = findViewById(R.id.card7); // Faculties
         CardView card8 = findViewById(R.id.card8); // Marksheet Report
 
@@ -68,23 +66,13 @@ public class ManageStudentActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        card5.setOnClickListener(v -> {
-            Intent intent = new Intent(ManageStudentActivity.this, PostNoticeAdminActivity.class);
-            startActivity(intent);
-        });
-
-        card6.setOnClickListener(v -> {
-            Intent intent = new Intent(ManageStudentActivity.this, AnnouncementAdminActivity.class);
-            startActivity(intent);
-        });
-
         card7.setOnClickListener(v -> {
             Intent intent = new Intent(ManageStudentActivity.this, FaculityAdminActivity.class);
             startActivity(intent);
         });
 
         card8.setOnClickListener(v -> {
-            Intent intent = new Intent(ManageStudentActivity.this, MarksheetAdminActivity.class);
+            Intent intent = new Intent(ManageStudentActivity.this, AddStudentAdminActivity.class);
             startActivity(intent);
         });
     }
