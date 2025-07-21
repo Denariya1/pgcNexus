@@ -1,7 +1,7 @@
 package com.example.pgcnexus;
 
 import android.content.Intent;
-import android.os.Bundle; // Removed Uri import as it's no longer needed
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -11,17 +11,14 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
 
-// Removed ActivityResultLauncher and ActivityResultContracts imports
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class UploadChallanAdminActivity extends AppCompatActivity {
 
     private Spinner spinnerPrograms;
     private EditText etRollNo;
-    private EditText etMonth, etAmount, etDueDate;
+    private EditText etMonth, etAmount, etDueDate, etIssueDate, etPaidDate; // Added etIssueDate, etPaidDate
     private Switch switchPaid;
-    // Removed: private Uri selectedFileUri = null;
     private ImageView backArrow;
 
     @Override
@@ -35,6 +32,8 @@ public class UploadChallanAdminActivity extends AppCompatActivity {
         etMonth = findViewById(R.id.et_month);
         etAmount = findViewById(R.id.et_amount);
         etDueDate = findViewById(R.id.et_due_date);
+        etIssueDate = findViewById(R.id.et_issueDate); // Initialize etIssueDate
+        etPaidDate = findViewById(R.id.et_paid_date);   // Initialize etPaidDate
         switchPaid = findViewById(R.id.switch_paid);
         Button btnSubmitChallan = findViewById(R.id.btn_submit_challan);
         backArrow = findViewById(R.id.backArrow);
@@ -51,14 +50,28 @@ public class UploadChallanAdminActivity extends AppCompatActivity {
             String rollNo = etRollNo.getText().toString().trim();
             String month = etMonth.getText().toString().trim();
             String amount = etAmount.getText().toString().trim();
+            String issueDate = etIssueDate.getText().toString().trim(); // Get issue date
             String dueDate = etDueDate.getText().toString().trim();
+            String paidDate = etPaidDate.getText().toString().trim();   // Get paid date
             boolean isPaid = switchPaid.isChecked();
 
-            // Basic validation
-            if (rollNo.isEmpty() || month.isEmpty() || amount.isEmpty() || dueDate.isEmpty()) {
-                Toast.makeText(this, "Please fill all fields.", Toast.LENGTH_SHORT).show();
+            // Basic validation - now includes rollNo, issueDate, paidDate (if not paid)
+            if (rollNo.isEmpty() || month.isEmpty() || amount.isEmpty() || issueDate.isEmpty() || dueDate.isEmpty()) {
+                Toast.makeText(this, "Please fill all required fields.", Toast.LENGTH_SHORT).show();
                 return;
             }
+
+            // If "Mark as Paid" is checked, "Paid Date" should not be empty
+            if (isPaid && paidDate.isEmpty()) {
+                Toast.makeText(this, "Please enter Paid Date if marking as Paid.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            // If "Mark as Paid" is NOT checked, "Paid Date" should be empty
+            if (!isPaid && !paidDate.isEmpty()) {
+                Toast.makeText(this, "Paid Date should be empty if not marked as Paid.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
 
             // Show summary
             StringBuilder summary = new StringBuilder();
@@ -66,7 +79,9 @@ public class UploadChallanAdminActivity extends AppCompatActivity {
                     .append("\nRoll No.: ").append(rollNo)
                     .append("\nMonth/Semester: ").append(month)
                     .append("\nAmount: ").append(amount)
+                    .append("\nIssue Date: ").append(issueDate) // Add issue date to summary
                     .append("\nDue Date: ").append(dueDate)
+                    .append("\nPaid Date: ").append(paidDate.isEmpty() ? "N/A" : paidDate) // Add paid date to summary
                     .append("\nPaid: ").append(isPaid ? "Yes" : "No");
 
 
@@ -76,9 +91,10 @@ public class UploadChallanAdminActivity extends AppCompatActivity {
             etRollNo.setText("");
             etMonth.setText("");
             etAmount.setText("");
+            etIssueDate.setText(""); // Clear issue date field
             etDueDate.setText("");
+            etPaidDate.setText("");   // Clear paid date field
             switchPaid.setChecked(false);
-            // Removed: selectedFileUri = null;
         });
 
         // Back arrow navigation

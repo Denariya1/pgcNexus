@@ -65,16 +65,31 @@
             android:background="@android:drawable/editbox_background"
             android:hint="Roll No."
             android:padding="12dp" />
-
-
         <EditText
-            android:id="@+id/et_month"
+            android:id="@+id/et_issueDate"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Month / Semester"
+            android:hint="Issue Date (e.g., 15-June-2025)"
+            android:inputType="number"
             android:padding="12dp"
             android:background="@android:drawable/editbox_background"
             android:layout_marginBottom="12dp" />
+        <EditText
+            android:id="@+id/et_due_date"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Due Date (e.g., 15-June-2025)"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="16dp" />
+        <EditText
+            android:id="@+id/et_paid_date"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Paid Date (e.g., 15-June-2025)"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="16dp" />
 
         <EditText
             android:id="@+id/et_amount"
@@ -86,14 +101,19 @@
             android:background="@android:drawable/editbox_background"
             android:layout_marginBottom="12dp" />
 
+
         <EditText
-            android:id="@+id/et_due_date"
+            android:id="@+id/et_month"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Due Date (e.g., 15-June-2025)"
+            android:hint="Month / Semester"
             android:padding="12dp"
             android:background="@android:drawable/editbox_background"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="12dp" />
+
+
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
